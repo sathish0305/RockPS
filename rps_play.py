@@ -11,19 +11,23 @@ try:
     if round<1 or round%2 == 0 or round >5:
         raise RoundError
     else:
-        for i in range(round):
-            print(f'Round {i+1}')
+        count = 0
+        while count < round:
+            print(f'Round {count+1}')
             option = int(input(f'Enter your option\n1.Rock\n2.Paper\n3.Scissors\n{"*"*20}\n'))
             if option>=1 and option<=3:
                 value = {
                     1:'Rock',
                     2:'Paper',
                     3:'Scissors'
-            }
+                }
                 print('-'*20)
                 g1.play(value[option])
+                count+=1
             else:
-                print('Invalid Option')
+                print('INVALID OPTION TRY AGAIN!!!')
+                print('-'*20)
+
     print('-'*20)
 except ValueError as err:
     print('Alphabets are not allowed \nEnter positive integer number')
