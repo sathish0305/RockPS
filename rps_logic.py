@@ -16,10 +16,12 @@ class Game(Exception):
     def user(self):
         self.userScore+=1
         print('User Wins the round')
+        print('-'*30)
 
     def bot(self):
         self.botScore+=1
         print('Bot Wins the round')
+        print('-'*30)
 
     def play(self,data):
         self.data = data
@@ -29,6 +31,7 @@ class Game(Exception):
         print('-'*20)
         if self.data.lower() == res:
             print('Both are same')
+            print('-'*30)
         elif self.data == 'Rock' and res == 'paper':
             self.bot()
         elif self.data == 'Paper' and res == 'scissors':
@@ -42,11 +45,14 @@ class Game(Exception):
         print('Game Summary')
         print('-'*30)
         print('User Score: ',self.userScore)
-        print('Player Score: ',self.botScore)
+        print('Computer Score: ',self.botScore)
         print('-'*30)
         if self.userScore>self.botScore:
             print('User Wins the Game')
+            print('-'*30)
         elif self.userScore<self.botScore:
             print('Bot wins the Game')
+            print('-'*30)
         else:
             print('Tie Game!!!!')
+            print('-'*30)
