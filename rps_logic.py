@@ -1,6 +1,6 @@
 import random
 
-class Game:
+class Game(Exception):
     def __init__(self):
         commands = {
             'rock':'Rock',
